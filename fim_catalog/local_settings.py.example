@@ -1,0 +1,43 @@
+SECRET_KEY = 'this_is_not_secret'
+METADATA_CACHE_TIME = 600
+ALLOWED_HOSTS = ['apps.example.com']
+
+SHIBBOLETH_ATTRIBUTE_MAP = {
+    "name-id": (True, "username"),
+    "displayName": (True, "name"),
+    "Shib-InetOrgPerson-mail": (False, "email"),
+}
+
+CATALOG_TITLE = 'Example Apps'
+EB_URL = 'https://engine.example.com'
+METADATA_SP_URL = 'https://multidata.example.com/service-providers.json'
+METADATA_USER = 'some_username'
+METADATA_PASSWORD = 'this_is_not_secret'
+
+PDP_URL = 'https://pdp.example.com'
+PDP_USER = 'pdp_admin'
+PDP_PASSWORD = 'this_is_not_secret'
+
+VOOT_URL = 'https://voot.example.com'
+VOOT_OAUTH_CLIENT_ID = 'apps'
+VOOT_OAUTH_CLIENT_SECRET = 'this_is_not_secret'
+VOOT_OAUTH_TOKEN_URL = 'https://authz.example.com/oauth/token'
+
+ADMIN_GROUP_ID = 'urn:collab:group:example.com:apps_admin'
+
+# Development Options
+DEBUG = True
+SHIBBOLETH_MOCK_HEADERS = True
+
+MOCK_METADATA = False
+MOCK_PDP = False
+MOCK_VOOT = False
+MOCK_VOOT_USER_IS_ADMIN = False
+
+MOCK_PDP_SP_DENY = False
+
+MOCK_SHIB_IDP = 'https://idp.example.com'
+MOCK_SHIB_USERID = 'urn:collab:person:idp.example.com:batman'
+MOCK_SHIB_DISPLAYNAME = 'Mister Batman'
+MOCK_SHIB_EMAIL = 'batman@example.com'
+
