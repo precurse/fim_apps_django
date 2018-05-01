@@ -1,0 +1,15 @@
+[[source]]
+name = "pypi"
+verify_ssl = true
+url = "https://pypi.org/simple"
+
+[requires]
+python_version = "3.5"
+
+[packages]
+django = "*"
+shibboleth = {git = "https://github.com/Brown-University-Library/django-shibboleth-remoteuser.git"}
+oauthlib = "*"
+requests-oauthlib = "*"
+
+[dev-packages]
