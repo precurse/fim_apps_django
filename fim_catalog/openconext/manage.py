@@ -9,8 +9,8 @@ logger = logging.getLogger(__name__)
 def get_metadata():
 
     if settings.MOCK_METADATA and settings.DEBUG:
-        logger.debug('Using mock metadata')
-        with open('fim_catalog/openconext/mock_json/metadata.json', 'r') as data_file:
+        logger.debug('Using mock Manage metadata')
+        with open('fim_catalog/openconext/mock_json/manage_metadata_sp.json', 'r') as data_file:
             metadata_json = json.load(data_file)
     else:
         metadata_json = cache.get('metadata')

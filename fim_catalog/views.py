@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 import datetime
 
-from .openconext import metadata, pdpclient, app_list, vootclient
+from .openconext import manage, pdpclient, app_list, vootclient
 
 def index(request):
     apps = app_list.get_app_list(request)

@@ -1,5 +1,5 @@
 SECRET_KEY = 'this_is_not_secret'
-METADATA_CACHE_TIME = 600
+MANAGE_CACHE_TIME = 600
 ALLOWED_HOSTS = ['apps.example.com']
 
 SHIBBOLETH_ATTRIBUTE_MAP = {
@@ -10,9 +10,9 @@ SHIBBOLETH_ATTRIBUTE_MAP = {
 
 CATALOG_TITLE = 'Example Apps'
 EB_URL = 'https://engine.example.com'
-METADATA_SP_URL = 'https://multidata.example.com/service-providers.json'
-METADATA_USER = 'some_username'
-METADATA_PASSWORD = 'this_is_not_secret'
+MANAGE_URL = 'https://manage.example.com'
+MANAGE_USER = 'some_username'
+MANAGE_PASSWORD = 'this_is_not_secret'
 
 PDP_URL = 'https://pdp.example.com'
 PDP_USER = 'pdp_admin'
@@ -29,7 +29,7 @@ ADMIN_GROUP_ID = 'urn:collab:group:example.com:apps_admin'
 DEBUG = True
 SHIBBOLETH_MOCK_HEADERS = True
 
-MOCK_METADATA = False
+MOCK_MANAGE = False
 MOCK_PDP = False
 MOCK_VOOT = False
 MOCK_VOOT_USER_IS_ADMIN = False
