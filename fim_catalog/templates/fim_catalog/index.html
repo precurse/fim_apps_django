@@ -7,7 +7,7 @@
     {% for a in app_list %}
       {% if a.name_en %}
       <tr>
-        <td><img src="{{ a.logo_0_url }}" class="img-responsive" height="{{ a.logo_0_height }}" width="{{ a.logo_0_width }}"></td>
+        <td><img src="{{ a.logo_url }}" class="img-responsive" height="{{ a.logo_height }}" width="{{ a.logo_width }}"></td>
         <td class="lead vert-align">{{ a.name_en }}</td>
         <td class="vert-align"><a href="{{ a.loginUrl }}" class="btn btn-primary">Login</a></td>
       </tr>

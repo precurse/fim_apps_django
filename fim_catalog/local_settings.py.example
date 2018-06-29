@@ -9,6 +9,7 @@ SHIBBOLETH_ATTRIBUTE_MAP = {
 }
 
 CATALOG_TITLE = 'Example Apps'
+CATALOG_PREFIX_HIDE = 'OpenConext'
 EB_URL = 'https://engine.example.com'
 MANAGE_URL = 'https://manage.example.com'
 MANAGE_USER = 'some_username'

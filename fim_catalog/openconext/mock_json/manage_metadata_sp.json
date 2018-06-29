@@ -39,10 +39,195 @@
                 "description:en": "Connection server - now",
                 "description:nl": "Connection server - now",
                 "logo:0:height": "60",
-                "logo:0:url": "https://.png",
+                "logo:0:url": "",
                 "logo:0:width": "120",
-                "name:en": "OpenConext connection server",
+                "name:en": "PDP Decision Required Service",
+                "name:nl": "OpenConext connection server",
+                "coin:policy_enforcement_decision_required": "1"
+            },
+            "metadataurl": "http://example.openconext.org/authentication/metadata",
+            "notes": null,
+            "revisionid": 4,
+            "revisionnote": "No revision note",
+            "state": "prodaccepted",
+            "type": "saml20-sp",
+            "user": "urn:collab:person:example.com:admin"
+        },
+        "revision": {
+            "created": 1453990922000,
+            "number": 4,
+            "updatedBy": "urn:collab:person:example.com:admin"
+        },
+        "type": "saml20_sp",
+        "version": 0
+    },
+  {
+        "_id": "0eda9504-0be6-4966-ad01-37b2daae2439",
+        "data": {
+            "active": true,
+            "allowedEntities": [],
+            "allowedall": true,
+            "arp": {
+                "attributes": {
+                    "urn:mace:dir:attribute-def:displayName": [
+                        {
+                            "source": "idp",
+                            "value": "*"
+                        }
+                    ],
+                    "urn:mace:dir:attribute-def:eduPersonPrincipalName": [
+                        {
+                            "source": "idp",
+                            "value": "*"
+                        }
+                    ]
+                },
+                "enabled": true
+            },
+            "created": "2016-01-28T15:22:02+01:00",
+            "eid": 54,
+            "entityid": "http://example.openconext.org/authentication/metadata",
+            "id": 348,
+            "ip": "145.100.191.122",
+            "manipulation": null,
+            "metaDataFields": {
+                "AssertionConsumerService:0:Binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST",
+                "AssertionConsumerService:0:Location": "http://example.openconext.org/authentication/consume-assertion",
+                "AssertionConsumerService:0:index": "0",
+                "NameIDFormat": "urn:oasis:names:tc:SAML:2.0:nameid-format:transient",
+                "contacts:0:contactType": "technical",
+                "contacts:1:contactType": "technical",
+                "contacts:2:contactType": "technical",
+                "description:en": "Connection server - now",
+                "description:nl": "Connection server - now",
+                "logo:0:height": "60",
+                "logo:0:url": "https://openconext.org/wp-content/uploads/2016/11/openconext_logo-med.png",
+                "logo:0:width": "120",
+                "name:en": "Allow-all Service",
                 "name:nl": "OpenConext connection server"
+            },
+            "metadataurl": "http://example.openconext.org/authentication/metadata",
+            "notes": null,
+            "revisionid": 4,
+            "revisionnote": "No revision note",
+            "state": "prodaccepted",
+            "type": "saml20-sp",
+            "user": "urn:collab:person:example.com:admin"
+        },
+        "revision": {
+            "created": 1453990922000,
+            "number": 4,
+            "updatedBy": "urn:collab:person:example.com:admin"
+        },
+        "type": "saml20_sp",
+        "version": 0
+    },
+  {
+        "_id": "0eda9504-0be6-4966-ad01-37b2daae2439",
+        "data": {
+            "active": true,
+            "allowedEntities": [],
+            "allowedall": true,
+            "arp": {
+                "attributes": {
+                    "urn:mace:dir:attribute-def:displayName": [
+                        {
+                            "source": "idp",
+                            "value": "*"
+                        }
+                    ],
+                    "urn:mace:dir:attribute-def:eduPersonPrincipalName": [
+                        {
+                            "source": "idp",
+                            "value": "*"
+                        }
+                    ]
+                },
+                "enabled": true
+            },
+            "created": "2016-01-28T15:22:02+01:00",
+            "eid": 54,
+            "entityid": "http://example.openconext.org/authentication/metadata",
+            "id": 348,
+            "ip": "145.100.191.122",
+            "manipulation": null,
+            "metaDataFields": {
+                "AssertionConsumerService:0:Binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST",
+                "AssertionConsumerService:0:Location": "http://example.openconext.org/authentication/consume-assertion",
+                "AssertionConsumerService:0:index": "0",
+                "NameIDFormat": "urn:oasis:names:tc:SAML:2.0:nameid-format:transient",
+                "contacts:0:contactType": "technical",
+                "contacts:1:contactType": "technical",
+                "contacts:2:contactType": "technical",
+                "description:en": "Connection server - now",
+                "description:nl": "Connection server - now",
+                "logo:0:height": "60",
+                "logo:0:url": "https://openconext.org/wp-content/uploads/2016/11/openconext_logo-med.png",
+                "logo:0:width": "120",
+                "name:en": "Test-only Service",
+                "name:nl": "OpenConext connection server"
+            },
+            "metadataurl": "http://example.openconext.org/authentication/metadata",
+            "notes": null,
+            "revisionid": 4,
+            "revisionnote": "No revision note",
+            "state": "testaccepted",
+            "type": "saml20-sp",
+            "user": "urn:collab:person:example.com:admin"
+        },
+        "revision": {
+            "created": 1453990922000,
+            "number": 4,
+            "updatedBy": "urn:collab:person:example.com:admin"
+        },
+        "type": "saml20_sp",
+        "version": 0
+    },
+  {
+        "_id": "0eda9504-0be6-4966-ad01-37b2daae2439",
+        "data": {
+            "active": true,
+            "allowedEntities": ["https://idp.example.com"],
+            "allowedall": false,
+            "arp": {
+                "attributes": {
+                    "urn:mace:dir:attribute-def:displayName": [
+                        {
+                            "source": "idp",
+                            "value": "*"
+                        }
+                    ],
+                    "urn:mace:dir:attribute-def:eduPersonPrincipalName": [
+                        {
+                            "source": "idp",
+                            "value": "*"
+                        }
+                    ]
+                },
+                "enabled": true
+            },
+            "created": "2016-01-28T15:22:02+01:00",
+            "eid": 54,
+            "entityid": "http://example.openconext.org/authentication/metadata",
+            "id": 348,
+            "ip": "145.100.191.122",
+            "manipulation": null,
+            "metaDataFields": {
+                "AssertionConsumerService:0:Binding": "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST",
+                "AssertionConsumerService:0:Location": "http://example.openconext.org/authentication/consume-assertion",
+                "AssertionConsumerService:0:index": "0",
+                "NameIDFormat": "urn:oasis:names:tc:SAML:2.0:nameid-format:transient",
+                "contacts:0:contactType": "technical",
+                "contacts:1:contactType": "technical",
+                "contacts:2:contactType": "technical",
+                "description:en": "Connection server - now",
+                "description:nl": "Connection server - now",
+                "logo:0:height": "60",
+                "logo:0:url": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+                "logo:0:width": "120",
+                "name:en": "Single IdP Service",
+                "name:nl": "Google Apps",
+                "coin:application_url": "https://inbox.google.com"
             },
             "metadataurl": "http://example.openconext.org/authentication/metadata",
             "notes": null,

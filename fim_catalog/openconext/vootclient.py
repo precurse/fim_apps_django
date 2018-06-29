@@ -34,10 +34,13 @@ def get_user_groups(request):
         groups = json.loads(r.text)
 
     try:
-        for g in groups:
-            if admin_group_id in g.itervalues():
-              return True
+        if len(groups) == 0:
+            logger.debug("User not part of any groups")
+        else:
+            for g in groups:
+                if admin_group_id in g.items():
+                  return True
     except AttributeError as e:
-        logger.error("Unable to check voot group data")
+        logger.error("Unable to check voot group data: {}".format(e))
 
     return False

@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 def get_metadata():
 
-    if settings.MOCK_METADATA and settings.DEBUG:
+    if settings.MOCK_MANAGE and settings.DEBUG:
         logger.debug('Using mock Manage metadata')
         with open('fim_catalog/openconext/mock_json/manage_metadata_sp.json', 'r') as data_file:
             metadata_json = json.load(data_file)
@@ -18,7 +18,8 @@ def get_metadata():
         if not metadata_json:
             logger.info('refreshing metadata cache')
             headers = { "Content-Type": "application/json" }
-            r = requests.get(settings.METADATA_SP_URL, auth=(settings.METADATA_USER, settings.METADATA_PASSWORD), headers=headers)
+            r = requests.get(settings.MANAGE_URL + '/manage/api/internal/search/saml20_sp', \
+                             auth=(settings.METADATA_USER, settings.METADATA_PASSWORD), headers=headers)
             cache.set('metadata', r.json(), settings.METADATA_CACHE_TIME)
             metadata_json = r.json()
         else:
