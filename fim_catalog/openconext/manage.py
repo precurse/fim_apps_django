@@ -18,9 +18,14 @@ def get_metadata():
         if not metadata_json:
             logger.info('refreshing metadata cache')
             headers = { "Content-Type": "application/json" }
-            r = requests.get(settings.MANAGE_URL + '/manage/api/internal/search/saml20_sp', \
-                             auth=(settings.METADATA_USER, settings.METADATA_PASSWORD), headers=headers)
-            cache.set('metadata', r.json(), settings.METADATA_CACHE_TIME)
+            post_data = '{"ALL_ATTRIBUTES":true}'
+
+            r = requests.post(settings.MANAGE_URL + '/manage/api/internal/search/saml20_sp',
+                             auth=(settings.MANAGE_USER, settings.MANAGE_PASSWORD),
+                             headers=headers,
+                             data=post_data)
+
+            cache.set('metadata', r.json(), settings.MANAGE_CACHE_TIME)
             metadata_json = r.json()
         else:
             logger.info('metadata cache was used')

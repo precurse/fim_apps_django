@@ -6,16 +6,11 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-def get_user_groups(request):
-    user_id = request.user.username
-    admin_group_id = settings.ADMIN_GROUP_ID
+def get_user_groups(user_id):
 
     if settings.MOCK_VOOT and settings.DEBUG:
-        with open('fim_catalog/openconext/mock_json/voot2/voot2_groups.json') as data_file:
-            groups = json.load(data_file)
-        # If user is a mock admin override the default group name
-        if settings.MOCK_VOOT_USER_IS_ADMIN:
-            admin_group_id = 'id1'
+        logger.debug("Using Mock VOOT client")
+        groups = json.load(open('fim_catalog/openconext/mock_json/voot2/voot2_groups.json'))
     else:
         client_id = settings.VOOT_OAUTH_CLIENT_ID
         client_secret = settings.VOOT_OAUTH_CLIENT_SECRET
@@ -31,16 +26,23 @@ def get_user_groups(request):
             logger.error("Did not receive an HTTP 200 response from VOOT endpoint")
             return False
 
+        logging.debug("Got groups: {}".format(r.text))
         groups = json.loads(r.text)
 
-    try:
-        if len(groups) == 0:
-            logger.debug("User not part of any groups")
-        else:
-            for g in groups:
-                if admin_group_id in g.items():
-                  return True
-    except AttributeError as e:
-        logger.error("Unable to check voot group data: {}".format(e))
+    return groups
 
-    return False
+def is_user_admin(request):
+    admin_group_id = settings.ADMIN_GROUP_ID
+    user_id = request.user.username
+    user_groups = get_user_groups(user_id)
+
+    if settings.MOCK_VOOT and settings.DEBUG:
+        if settings.MOCK_VOOT_USER_IS_ADMIN:
+            admin_group_id = 'id1'
+
+    if len(user_groups) == 0:
+        logger.debug("User not part of any groups")
+    else:
+        for g in user_groups:
+            if admin_group_id in g['id']:
+              return True

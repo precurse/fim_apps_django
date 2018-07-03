@@ -7,7 +7,7 @@ from .openconext import manage, pdpclient, app_list, vootclient
 
 def index(request):
     apps = app_list.get_app_list(request)
-    is_admin = vootclient.get_user_groups(request)
+    is_admin = vootclient.is_user_admin(request)
     display_name = request.META['displayName']
 
     context = {

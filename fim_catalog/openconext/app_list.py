@@ -32,7 +32,10 @@ def get_app_list(request):
 
         # Hide SPs without names
         if sp_name is None:
-            logger.error("SP {} has no name:en entry in metadata".format(sp_entityid))
+            logger.debug("SP {} has no name:en entry in metadata".format(sp_entityid))
+            continue
+        elif sp_name.startswith(settings.CATALOG_PREFIX_HIDE):
+            logger.debug("SP {} excluded due to {} prefix".format(sp_entityid, settings.CATALOG_PREFIX_HIDE))
             continue
 
         if sp_pdp_required:
@@ -58,12 +61,6 @@ def get_app_list(request):
                 app_list.append(sp_data)
 
     return app_list
-
-def clean_app_keys(entity):
-    '''
-    Takes entity dictionary and replaces ":" with "_" to work with django templating
-    '''
-    return { x.replace(':', '_'): entity[x] for x in entity.keys() }
 
 def get_app_url(sp_entityid, sp_login_url_template, sp_app_url):
     # Use URL from metadata or generate IdP-initiated URL
